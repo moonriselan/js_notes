@@ -59,5 +59,5 @@
 
 // console.log(y);
 // let y = 42;  Uncaught ReferenceError: Cannot access "y" before initialization
-// TDZ = temporary dead zone -
+// TDZ = temporary dead zone
 
