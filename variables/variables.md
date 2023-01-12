@@ -2,7 +2,7 @@
 
 ## Different keywords
 
-- var (nie powinno sie używa, tylko jak potrzebujesz zasięg funkcyjny)
+- var (nie powinno sie używac, tylko jak potrzebujesz zasięg funkcyjny)
 - let (zmienna)
 - const (stala — domyslnie ta nalezy uzywac )
 
