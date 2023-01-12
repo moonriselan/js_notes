@@ -95,15 +95,6 @@ const namesUpper = [];
 //
 // console.log(namesUpper);
 
-//let index = 0;
-//while (index < names.length) {
-  //  namesUpper.push(names[index] [0].toUpperCase() + names[index].slice(1));
-    //index++;
-    //index = index + 1;
-    //index -= 1;
-    //index = index - (-1);
-//}
-//console.log(namesUpper);
 // let index = 0;
 //
 // while (index < names.length){
