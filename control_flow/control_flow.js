@@ -1,4 +1,4 @@
-// const temperature = 32;
+const temperature = 32;
 //
 // if (temperature >= 22) {
 //     console.log ('ciepło');
@@ -45,9 +45,102 @@
 const names = ["ala", "ola", "ela", "ula"];
 const namesUpper = [];
 
-for (let i = 0; i < names.length; i++) {
- namesUpper.push(names[i] [0].toUpperCase() + names[i].slice(1)); //konkatenacja - laczenie ciagow
+// for (let i = 0; i < names.length; i++) {
+//  namesUpper.push(names[i] [0].toUpperCase() + names[i].slice(1)); //konkatenacja - laczenie ciagow
+//
+// }
+//
+// console.log(namesUpper);
+//const max = 10;
 
-}
+// for (var i = 0; i < max; i++) {
+//     setTimeout (function () {
+//         console.log(i);
+//     }, timeout: 0);
+//}
+// for (const name of names) {
+//
+//     namesUpper.push(name[0].toUpperCase() + name.slice(1))
+//
+// }
+//
+// console.log(namesUpper);
 
-console.log(namesUpper);
+// const max = 10;
+//
+// for (var i = 0; i < max; i++){
+//     setTimeout(function() {
+//         console.log(i);
+//     }, 0);
+// }
+//
+// for (let i = 0; i < max; i++){
+//     setTimeout(function() {
+//         console.log(i);
+//     }, 0);
+// }
+//
+// for (let i = 0; i < names.length; i++){
+//     ((name_) => {
+//         const name = name_;
+//         namesUpper.push(name[0].toUpperCase() + name.slice(1));
+//     })(names[i]);
+//}
+// for (let i = 0; i < names.length; i++){
+//     ((name_) => {
+//         const name = name_;
+//         namesUpper.push(name[0].toUpperCase() + name.slice(1));
+//     })(names[i]); // IIFE - immediately invoke function expression
+// }
+//
+// console.log(namesUpper);
+
+//let index = 0;
+//while (index < names.length) {
+  //  namesUpper.push(names[index] [0].toUpperCase() + names[index].slice(1));
+    //index++;
+    //index = index + 1;
+    //index -= 1;
+    //index = index - (-1);
+//}
+//console.log(namesUpper);
+// let index = 0;
+//
+// while (index < names.length){
+//     namesUpper.push(names[index][0].toUpperCase() + names[index].slice(1));
+//     // index++;
+//     // index = index + 1;
+//     // index -=- 1;
+//     // index = index - (-1);
+//     index += 1;
+// }
+//
+// console.log(namesUpper);
+
+// let index = 0;
+//
+// do {
+//     namesUpper.push(names[index][0].toUpperCase() + names[index].slice(1));
+//     index++;
+// } while (index < names.length)
+//
+// console.log(namesUpper);
+
+// const namesObj = {
+//     a: "ala",
+//     b: "ola",
+//     c: "ela",
+//     d: "ula"
+// }
+//
+// const namesObjUpper = {}
+//
+// for (const key in namesObj) {
+//     namesObjUpper[key] = namesObj[key][0].toUpperCase() + namesObj[key].slice(1);
+// }
+//
+// console.log(namesObjUpper);
+
+// const namesUpper2 = names.map((name) => name[0].toUpperCase() + name.slice(1));
+// console.log(namesUpper2);
+
