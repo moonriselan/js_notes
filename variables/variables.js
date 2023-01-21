@@ -10,7 +10,7 @@
 //const x2 = 2137;Uncaught SyntaxError: Identifier "x2" has already been declared
 
 
-// Reinitialization
+// Reinitialization - nadanie wartosci poczatkowej, wykonanie inicjalizacji drugi raz
 
 // var x = 42;
 // x = 2137;
