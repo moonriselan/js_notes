@@ -220,6 +220,6 @@ const data = [
 //const checkAdult = (items) => items
 //.every((item) => item.age >= 18)
 
-const checkAdult = (items) => items
-    .some((item) => item.age <= 18)
+//const checkAdult = (items) => !items
+ //   .some((item) => item.age <= 18)
 
