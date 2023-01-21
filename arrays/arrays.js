@@ -49,42 +49,94 @@ const data = [
     }
 ]
 
-// function avgAge(items){
+// function avgAge(persons){
 //     let totalAge = 0;
 //
-//     for (const item of items) {
-//         totalAge += item.age;
+//     for (const person of persons) {
+//         totalAge += person.age;
 //     }
-//     return totalAge/ items.length
+//     return totalAge/ person.length
 // }
+
+
+
+// OPTIMAL!! - usage of reduce
+//function avgAge(persons) {
+ //   return persons.reduce((acc,ce) => acc.age + ce.age, 0) / persons.length;
+//}
+//function avgAge(persons) {
+  //  const ages = persons.map((person) => person.age);
+
+   // return persons.reduce((acc, ce) => acc + ce) / persons.length;
+//}
+
+
+
+
 //
-// function avgAgePeopleFromKrakow(items){
+// function avgAgePeopleFromKrakow(persons){
 //     let totalAge = 0;
 //     let counter = 0;
 //
-//     for (let i =0; i < items.length; i++){
+//     for (let i =0; i < persons.length; i++){
 //         if (items[i].city.toLowerCase() === 'krakow'){
 //             counter++;
-//             totalAge += items[i].age;
+//             totalAge += persons[i].age;
 //         }
 //     }
 //     return totalAge / counter;
 // }
 
+//console.log(avgAge(data));
+//console.log(avgAgeKrakow(data));
+
+//function avgAgeKrakow(persons) {
+   // const personsKrakow = persons.filter((person) => person.city.toLowerCase() === 'krakow');
+
+  //  return personsKrakow.reduce((acc, ce) => acc + ce.age, 0) / personsKrakow.length;
+//}
+
+//function avgAgeKrakow(persons) {
+    //return persons
+      //  .filter((person) => person.city.toLowerCase() === 'krakow')  // chaining - w nieskonczonosc mozna, jesli jakis typ danych to mozna metode zwracac
+      //  .reduce((acc, ce) => acc + ce.age, 0) /
+      //  persons.filter((person) => person.city.toLowerCase() === 'krakow').length;
+//}
+
+
 // function getAllNames(elements){
-//     const table = [];
+//     const names = [];
 //     let index = 0
 //
 //     while (index < elements.length){
 //         table.push(elements[index].name)
 //         index++;
 //     }
-//     return table
+//     return names
 // }
-// function capitalize(name){
+
+//function getAllNames(persons) {
+  //  return persons.map((person) => person.name )
+//}
+
+//const getAllNames = (persons) => persons.map((person) => person.name)
+//const getAllNames = (persons) => persons.map((person) => person.name[0].toUpperCase() + person.name.slice(1))
+//const getAllNames = (persons) => persons.map((person) => capitalize(person.name))
+
+
+
+ //function capitalize(name){
 //     return name[0].toUpperCase() + name.slice(1);
-// }
 //
+// }
+//capitalize('jaroslaw')
+//
+
+//arrow function and function expression:
+//const capitalize = (name) => name[0].toUpperCase() + name.slice(1)
+
+
+
 // function getPeoplesWhoLovesJS(elements){
 //     const names = []
 //
@@ -93,22 +145,52 @@ const data = [
 //             names.push(capitalize(element.name))
 //         }
 //     }
-//     return names.join(', ')
+//return names.join(', ')
 // }
 //
 //
 //
 // console.log(getPeoplesWhoLovesJS(data))
 
-function getAgeOfPeopleWithNameLengthGreaterThan5(persons){
-    const ageArray = [];
+//const getPeopleWhoLovesJS = (elements) => {
+  //  const peopleWhoLovesJs = elements.filter((element) => element.hobbies.includes('js'))
+   // return peopleWhoLovesJs.map((element) => capitalize(element.name)).join(',')
+//}
 
-    for (const person of persons){
-        if (5 < person.name.length){
-            ageArray.push(person.age)
+//const getPeopleWhoLovesJs = (elements) => elements
+  //  .filter((element) => element.hobbies.includes('js'))
+    //.map((element) => capitalize(element.name))
+   // .join(',')
+
+
+//const getPeopleWhoLovesJs = (elements) => elements
+   // .reduce((acc, ce) => ce.hobbies.includes("js") ? acc + capitalize(ce.name) + ",": acc, "")
+    //.slice(0,-2)
+
+
+//function getAgeOfPeopleWithNameLengthGreaterThan5(persons){
+    //const ageArray = [];
+
+  //  for (const person of persons){
+  //      if (5 < person.name.length){
+  //          ageArray.push(person.age)
+   //     }
+  //  }
+ //   return ageArray
+//}
+
+//const getAgeOfPeopleWithNameLengthGreaterThan5 = (persons) => persons
+ //   .filter((person) => person.name.length > 5)
+  //  .map((person) => person.age )
+
+//console.log(getAgeOfPeopleWithNameLengthGreaterThan5(data))
+
+const checkDataIncludesName = (items, name) => {
+    for (const item of items) {
+        if (item.name.toLowerCase() === name.toLowerCase) {
+        return true
         }
-    }
-    return ageArray
-}
 
-console.log(getAgeOfPeopleWithNameLengthGreaterThan5(data))
+        }
+    return false
+    }
