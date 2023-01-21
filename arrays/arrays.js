@@ -223,3 +223,21 @@ const data = [
 //const checkAdult = (items) => !items
  //   .some((item) => item.age <= 18)
 
+
+//Imperative
+//const getAllHobbies = (items) =>  {
+// allHobbies = []
+
+   // for (const item of items) {
+      //  for (const hobby of item.hobbies) {
+     //       allHobbies.push(hobby)
+     //   }
+
+   // }
+ //   return allHobbies
+//}
+
+//const getAllHobbies = (items) => items
+   // .map((item) => item.hobbies)
+    //.flat()
+
