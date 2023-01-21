@@ -258,13 +258,22 @@ const data = [
 
 //const x = [{pawel:20}, {filip:15}]
 
-const GetCustomObject = (items) => {
-    const result = []
+//const GetCustomObject = (items) => {
+ //   const result = []
 
-    for (const item of items) {
-        let counter = 0
-        for (const hobby of item.hobbies) {
-            counter += hobby.length
-        }
-    }
-}
+   // for (const item of items) {
+ ///       let counter = 0
+     //   for (const hobby of item.hobbies) {
+      //      counter += hobby.length
+     //   }
+      //  result.push({[item.name]:counter})
+  //  }
+  //  return result
+//
+//}
+
+
+//const getCustomObject = (items) => items
+ //   .map((item) => ({
+  //      [item.name]: item.hobbies.join('').length
+ //   }))
