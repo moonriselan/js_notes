@@ -205,3 +205,21 @@ const data = [
    // .filter((item) => item.name.toLowerCase() === name.toLowerCase())
    // .length > 0 - mniej wydajne rozwiazanie
 
+//const checkDataIncludesName = (items, name) => items
+//.some((item) => item.name.toLowerCase() === name.toLowerCase())
+
+//const checkAdult = (items) => {
+    //for (const item of items) {
+  //      if (item.age <= 18) {
+   //     return false
+ //       }
+ //   }
+  //  return true
+//}
+
+//const checkAdult = (items) => items
+//.every((item) => item.age >= 18)
+
+const checkAdult = (items) => items
+    .some((item) => item.age <= 18)
+
