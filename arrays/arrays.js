@@ -185,12 +185,23 @@ const data = [
 
 //console.log(getAgeOfPeopleWithNameLengthGreaterThan5(data))
 
-const checkDataIncludesName = (items, name) => {
-    for (const item of items) {
-        if (item.name.toLowerCase() === name.toLowerCase()) {
-        return true
-        }
 
-        }
-    return false
-    }
+
+// Czesciowo imperatywna - krok po kroku
+//const checkDataIncludesName = (items, name) => {
+    //for (const item of items) {
+      //  if (item.name.toLowerCase() === name.toLowerCase()) {
+       // return true
+      //  }
+
+       // }
+//    return false
+  //  }
+
+
+
+//Deklaratywna - definicje
+//const checkDataIncludesName = (items, names) => items
+   // .filter((item) => item.name.toLowerCase() === name.toLowerCase())
+   // .length > 0 - mniej wydajne rozwiazanie
+
