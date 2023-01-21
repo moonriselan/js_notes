@@ -1,4 +1,4 @@
-// Redeclaration
+// Redeclaration - ponowne tworzenie zmiennej, identyfikatora
 
 //var x = 42;
 //var x = 2137;
