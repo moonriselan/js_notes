@@ -241,3 +241,12 @@ const data = [
    // .map((item) => item.hobbies)
     //.flat()
 
+//const getAllHobbies = (items) => items
+ //   .flatMap((item) => item.hobbies)
+
+
+//const getAllHobbies = (items) => items
+//    .reduce((acc, ce) => [...acc,...ce.hobbies], [] )  //----- spread operator
+
+
+
