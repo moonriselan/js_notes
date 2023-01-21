@@ -187,7 +187,7 @@ const data = [
 
 const checkDataIncludesName = (items, name) => {
     for (const item of items) {
-        if (item.name.toLowerCase() === name.toLowerCase) {
+        if (item.name.toLowerCase() === name.toLowerCase()) {
         return true
         }
 
