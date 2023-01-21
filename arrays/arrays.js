@@ -250,3 +250,6 @@ const data = [
 
 
 
+//const getAllUniqueHobbies = (items) => new Set(items.flatMap((item) => item.hobbies))
+
+
