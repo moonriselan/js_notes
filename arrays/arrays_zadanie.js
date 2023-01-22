@@ -12,7 +12,7 @@
 //         age: 23,
 //         offsprings: 3,
 //         city: 'the Swamp',
-//         hobbies: ['feminism', 'shrek']
+//         hobbies: ['singing', 'shrek']
 //     },
 //
 //     {
