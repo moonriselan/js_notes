@@ -57,7 +57,7 @@ function hasMostOffspring(data) {
 
     const sorted = data.sort((char1, char2) => char2.offsprings - char1.offsprings);
 
-    return sorted.filter(({offsprings}) => offsprings === sorted.at(0).offsprings).map(({name}) => name);
+    return sorted.filter(({offsprings})i => offsprings === sorted.at(0).offsprings).map(({name}) => name);
 }
 
 function whoseOldest(data) {
@@ -75,4 +75,38 @@ function whoLovesShrek(data) {
     })
 
     return shrekLovers.map(({name})=> name);
+
+
 }
+
+// or
+
+function maxOffSprings(persons) {
+    let names = [];
+    let counter = persons[0];
+
+    for (let i = 0; i < persons.length; i++) {
+        if (persons[i].offsprings > counter.offsprings) {
+            counter = persons[i];
+            names = [persons[i].name]
+        } else if (persons[i].offsprings === counter.offsprings) {
+            names.push(persons[i].name)
+        }
+    }
+    return names;
+}
+
+function maxAgeCreature(data){
+    const maxAge = data.sort((a,b) =>
+        b.age - a.age);
+    return maxAge.at(0).name;
+}
+
+const getCreatureWhoLoveShrek = (elements) => elements
+.filter((element) => element.hobbies.includes('shrek'))
+.map((element) => element.name)
+.join(',')
+;
+           
+
+
