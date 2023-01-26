@@ -257,7 +257,48 @@ const ksw = [
 // 3. Podaj Imię zawodnika a najwyższym BMI(stosunek wzrostu do wagi).
 Dodałem utrudnienie w postaci różnych jednostek by trochę zamieszać (1 ft == 30.48 cm), (1 lb == 0.45 kg).
 
+function convertHeight(value) {
+    units = {cm: 1, ft: 30.48};
 
+    return parseInt(value) * (value.toLowerCase().endsWith('cm') ? units.cm : units.ft);
+}
+
+function convertWeight(value) {
+    units = {kg: 1, lb: 0.45};
+
+    return parseInt(value) * (value.toLowerCase().endsWith('kg') ? units.kg : units.lb);
+}
+
+function findHeaviest(people) {
+
+    const sorted = people
+        .sort((pers1, pers2) => convertWeight(pers2.weight) - convertWeight(pers1.weight));
+
+    return sorted
+        .filter(({weight}) => weight === sorted[0].weight)
+        .map(({name}) => name);
+}
+
+function bestRatio(people) {
+
+    const sorted = people
+        .sort((pers1, pers2) => pers2.win_streak.win / pers2.win_streak.loss - pers1.win_streak.win / pers1.win_streak.loss);
+
+    return sorted
+        .filter(({win_streak}) => win_streak.win / win_streak.loss === sorted[0].win_streak.win / sorted[0].win_streak.loss)
+        .map(({name}) => name);
+}
+
+function highestBMI(people) {
+
+    const sorted = people
+        .sort((pers1, pers2) => convertWeight(pers2.weight) / convertHeight(pers2.height) - convertWeight(pers1.weight) / convertHeight(pers1.height));
+
+    return sorted
+        .filter(({weight, height}) => convertWeight(weight) / convertHeight(height) === convertWeight(sorted[0].weight) / convertHeight(sorted[0].height))
+        .map(({name}) => name);
+}
+ 
 
 
 
