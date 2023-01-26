@@ -108,5 +108,156 @@ const getCreatureWhoLoveShrek = (elements) => elements
 .join(',')
 ;
            
+new data sets:
+
+const trucks = [
+    {
+        truck: "Scania",
+        hp: "560",
+        truck_driver: "Janusz",
+        weight: 40000,
+        favourite_meal: ["Pizza", "Burger", "Fries"]
+    },
+    {
+        truck: "Renault",
+        hp: "420",
+        truck_driver: "Jarek",
+        weight: 35000,
+        favourite_meal: ["Kebab", "Burger", "Fries"]
+    },
+    {
+        truck: "Volvo",
+        hp: "700",
+        truck_driver: "Zenek",
+        weight: 37000,
+        favourite_meal: ["Kebab", "Burger", "Chciken"]
+    },
+    {
+        truck: "Mercedes",
+        hp: "460",
+        truck_driver: "Jurek",
+        weight: 16000,
+        favourite_meal: ["Bigos", "Burger", "Fries"]
+    },
+    {
+        truck: "Man",
+        hp: "440",
+        truck_driver: "Donald",
+        weight: 20000,
+        favourite_meal: ["Pizza", "Steak", "Ice cream"]
+    },
+    {
+        truck: "Iveco",
+        hp: "380",
+        truck_driver: "Antoni",
+        weight: 25000,
+        favourite_meal: ["Pizza", "Steak", "Spaghetti"]
+    },
+]
+
+// 1. Wyświetl nazwy ciężarówek posortowane według wagi od najmniejszej do najwiekszej.
+// 2. Wyświetl ciężarówki z mocą powyżej 450 hp  i imiona szoferów.
+// 3. Wyświetl szoferów na literę J oraz ich ulubione potrawy.
+
+
+// 1. Wyświetl nazwy ciężarówek posortowane według wagi od najmniejszej do najwiekszej.
+function trucksFromMinToMaxWeight(elements) {
+    const sorted = elements.sort((a, b) => a.weight - b.weight)
+
+    return sorted.map((element) => element.truck)
+}
+
+// 2. Wyświetl ciężarówki z mocą powyżej 450 hp i imiona szoferów.
+function trucksWithHpOver450(elements) {
+    const over450 = elements.filter(({hp}) => Number(hp) > 450)
+
+      return   over450.map(({truck, truck_driver}) => [truck, truck_driver]);
+}
+
+// 3. Wyświetl szoferów na literę J oraz ich ulubione potrawy.
+function nameStartingJAndFavouriteMeal(elements) {
+    const nameStartingJ = elements.filter((element) => element.truck_driver.includes('J'[0]))
+
+    return nameStartingJ.map(({truck_driver, favourite_meal}) => [truck_driver, ...favourite_meal] )
+}
+
+new data sets:
+
+const ksw = [
+    {
+        name: "Damian Janikowski",
+        height: "180.00cm",
+        arm_range: "180.00cm",
+        weight: "83,9KG",
+        win_streak: {
+            win: 7,
+            loss: 5,
+            draw: 0
+        },
+    },
+    {
+        name: "Borys Mańkowski",
+        height: "170.00cm",
+        arm_range: "178.00cm",
+        weight: "155lb",
+        win_streak: {
+            win: 7,
+            loss: 5,
+            draw: 0
+        },
+    },
+    {
+        name: "Mariusz Pudzianowski",
+        height: "6.1ft",
+        arm_range: "195.00cm",
+        weight: "120,2kg",
+        win_streak: {
+            win: 17,
+            loss: 7,
+            draw: 0
+        },
+    },
+    {
+        name: "Marcin Różalski",
+        height: "188.00cm",
+        arm_range: "181.00cm",
+        weight: "265lb",
+        win_streak: {
+            win: 7,
+            loss: 4,
+            draw: 0
+        },
+    },
+    {
+        name: "Akop Szostak",
+        height: "5.6ft",
+        arm_range: "186.00cm",
+        weight: "93kg",
+        win_streak: {
+            win: 0,
+            loss: 2,
+            draw: 0
+        },
+    },
+    {
+        name: "Michał Materla",
+        height: "183.00cm",
+        arm_range: "192.00cm",
+        weight: "185lb",
+        win_streak: {
+            win: 21,
+            loss: 7,
+            draw: 0
+        },
+    },
+]
+
+// 1. Podaj imiona najcięższych zawodników.
+// 2. Podaj Imię zawodnika z najlepszym stosunkiem wygranych do przegranych starć.
+// 3. Podaj Imię zawodnika a najwyższym BMI(stosunek wzrostu do wagi).
+Dodałem utrudnienie w postaci różnych jednostek by trochę zamieszać (1 ft == 30.48 cm), (1 lb == 0.45 kg).
+
+
+
 
 
