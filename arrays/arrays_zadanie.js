@@ -374,3 +374,181 @@ const hipHopSongs1990s = [
         year: "1999"
     }
 ];
+
+const firstSong = hipHopSongs1990s
+    .filter((entry) => parseInt(entry.peakChartPosition) <= 10 && parseInt(entry.year) >= 1993 && parseInt(entry.year) <= 1997 && entry.song.split(' ').length >= 2 && entry.song.split(' ').length <= 4)
+    .map((entry) => entry.artist)
+
+// console.log(firstSong)
+
+const secondSong = hipHopSongs1990s
+    .filter((entry) => parseInt(entry.peakChartPosition) === 1 && parseInt(entry.year) >= 1995 && parseInt(entry.year) <= 1999)
+    .map((entry) => entry.song)
+
+// console.log(secondSong)
+
+
+const thridSong = hipHopSongs1990s
+    .filter((entry) => entry.recordLabel === 'Death Row Records' && parseInt(entry.year) >= 1990 && parseInt(entry.year) <= 1995).length
+
+console.log(thridSong)
+
+const football = [
+    {
+        team: "Real Madrid",
+        foundingYear: 1902,
+        nationality: "Spain",
+        coach: {
+            name: "Carlo Ancelotti",
+            age: 63,
+            nationality: "Italy"
+        },
+        titles: {
+            ChampionsLeague: 13,
+            LeagueTitles: 34,
+        }
+    },
+    {
+        team: "Barcelona",
+        foundingYear: 1899,
+        nationality: "Spain",
+        coach: {
+            name: "Xavier Hernández",
+            age: 42,
+            nationality: "Spain"
+        },
+        titles: {
+            ChampionsLeague: 5,
+            LeagueTitles: 26,
+        }
+    },
+    {
+        team: "Bayern Munich",
+        foundingYear: 1900,
+        nationality: "Germany",
+        coach: {
+            name: "Hansi Flick",
+            age: 55,
+            nationality: "Germany"
+        },
+        titles: {
+            ChampionsLeague: 6,
+            LeagueTitles: 31,
+        }
+    },
+    {
+        team: "Manchester United",
+        foundingYear: 1878,
+        nationality: "England",
+        coach: {
+            name: "Ole Gunnar Solskjaer",
+            age: 46,
+            nationality: "Norway"
+        },
+        titles: {
+            ChampionsLeague: 3,
+            LeagueTitles: 20,
+        }
+    },
+    {
+        team: "Paris Saint-Germain",
+        foundingYear: 1970,
+        nationality: "France",
+        coach: {
+            name: "Mauricio Pochettino",
+            age: 49,
+            nationality: "Argentina"
+        },
+        titles: {
+            ChampionsLeague: 0,
+            LeagueTitles: 8,
+        }
+    }
+];
+
+const firstFootball = football.filter((team) => team.titles.ChampionsLeague === 0).flatMap((team) => [team.team, 2022 - team.foundingYear])
+console.log(firstFootball)
+
+const secondFootball = football.sort((team1, team2) => team2.coach.age - team1.coach.age)
+    .map((team) => team.coach.nationality === team.nationality ? team.team.toUpperCase() : team.team)
+console.log(secondFootball)
+
+const thirdFootball = football.filter((team) => team.nationality.toLowerCase() === 'spain').reduce((acc, ce) => acc + ce.titles.ChampionsLeague + ce.titles.LeagueTitles, 0)
+console.log(thirdFootball)
+
+const jazz = [
+    {
+        name: 'Miles Dewey Davis',
+        city: 'Stany Zjednoczone',
+        musical_instrument: 'Trębacz',
+        most_popular_song: 'Blue in Green',
+        listeners: '6.808.384'
+
+    },
+    {
+        name: 'Krzysztof Komeda',
+        city: 'Poznan',
+        musical_instrument: ['pianista', 'kompozytor'],
+        most_popular_song: 'Sleep Save And Warm',
+        listeners: '3.578.794'
+    },
+    {
+        name: 'Bill Evans',
+        city: 'Stany Zjednoczone',
+        musical_instrument: 'Saksofonista',
+        most_popular_song: 'Sunday at the Village Vanguard',
+        listeners: '836.860'
+
+    },
+    {
+        name: 'Zbigniew Seifert',
+        city: 'Krakow',
+        musical_instrument: ['skrzypek', 'saksofonista'],
+        most_popular_song: 'East Of The Sun',
+        listeners: '6.350.825'
+    },
+    {
+        name: 'Louis Armstrong',
+        city: 'Stany Zjednoczone',
+        musical_instrument: ['trębacz', 'wokalista', 'kompozytor'],
+        most_popular_song: 'What a Wonderful World',
+        listeners: '2.180.922'
+    },
+    {
+        name: 'Zbigniew Namysłowski',
+        city: 'Warszawa',
+        musical_instrument: ['saksofonista', 'kompozytor', 'aranżer'],
+        most_popular_song: 'Astigmatic',
+        listeners: '2.470.357'
+    }
+
+]
+
+//1. Wyświetl imiona wykonawców, które się urodzili w Stanach Zjednoczonych i są kompozytorami, posortuj ich w zależności od ilości słuchaczy.
+//2. Wyświetl imię i najpopularniejszy utwór, który ma najwięcej słuchaczy ze wszystkich.
+//3. Wyświetl imiona polskich wykonawców, posortuj według popularności i większej nazwy popularnego utworu.
+
+const kompotyztorUSA = (jazz) => jazz
+    .filter((artist) => artist.city.toLowerCase() === 'stany zjednoczone' && artist.musical_instrument.includes('kompozytor'))
+    .sort((artist1, artist2) => parseInt(artist2.listeners.split('.').join('')) - parseInt(artist1.listeners.split('.').join('')))
+    .map((artist) => artist.name)
+    .join(', ')
+
+console.log(kompotyztorUSA(jazz))
+
+const mostPopularSong = (jazz) => jazz
+    .sort((artist1, artist2) => parseInt(artist2.listeners.split('.').join('')) - parseInt(artist1.listeners.split('.').join('')))
+    .map((artist) => ({
+        name: artist.name,
+        song: artist.most_popular_song
+    }))[0]
+
+console.log(mostPopularSong(jazz))
+
+const artistsFromPoland = (jazz) => jazz
+    .filter((artist) => artist.city.toLowerCase() !== 'stany zjednoczone')
+    .sort((artist1, artist2) => parseInt(artist2.listeners.split('.').join('')) - parseInt(artist1.listeners.split('.').join('')) && artist2.most_popular_song.split(' ').length - artist1.most_popular_song.split(' ').length)
+    .map((artist) => artist.name)
+    .join(', ')
+
+console.log(artistsFromPoland(jazz))
